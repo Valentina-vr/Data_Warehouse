@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.login {
+  margin: 20px;
+  width: 90%;
+}
+
+input {
+  border: 1px solid #b4b4b4;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 10px 10px;
+  width: 100%;
+  -webkit-transition: border .5s;
+  transition: border .5s;
+  margin: 0 0 5%;
+}
+
+label {
+  font-size: 14px;
+  color: gray;
+}
+
+.btn {
+  margin: 20% 20% 0;
+  border: 2px solid transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  background: #5D42DE;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 7px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  display: block;
+  width: 60%;
+}
+
+.login-link {
+  font-size: 12px;
+  color: #5D42DE;
+  display: block;
+  margin-top: 12px;
+  text-decoration: none;
+  margin: 10% 30% 0;
+}
+
+@media screen and (min-width: 700px) {
+  #autenticacion {
+    margin-top: -20px;
+    z-index: 100;
+    height: 100vh;
+    background-image: url("../Images/fondo de prueba.png");
+    min-height: 100%;
+    background-size: cover;
+  }
+  .login {
+    position: relative;
+    top: 22%;
+    left: 35%;
+    padding: 30px;
+    height: 400px;
+    width: 400px;
+    background-color: rgba(55, 44, 121, 0.5);
+    border-radius: 14px;
+  }
+  .login form {
+    padding-top: 30px;
+  }
+  .login img {
+    width: 120px;
+    position: absolute;
+    top: -60px;
+    left: 35%;
+  }
+  label {
+    color: white;
+    margin: 5px;
+    background-color: none;
+  }
+  input {
+    margin: 0 0 5%;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.507);
+    border: none;
+  }
+  input:active {
+    border: solid white 6px;
+    border-radius: 7px;
+  }
+  ::-webkit-input-placeholder {
+    color: white;
+  }
+  :-ms-input-placeholder {
+    color: white;
+  }
+  ::-ms-input-placeholder {
+    color: white;
+  }
+  ::placeholder {
+    color: white;
+  }
+  .signup {
+    padding-top: 40px;
+    text-align: center;
+  }
+  .login-link {
+    position: relative;
+    left: 7.5%;
+  }
+  .signup p, .signup a {
+    color: white;
+    font-size: 12px;
+  }
+  .btn:hover {
+    background-color: #fff;
+    border: 4px solid white;
+    color: #5D42DE;
+  }
+}
+/*# sourceMappingURL=style.css.map */
