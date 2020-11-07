@@ -3438,7 +3438,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0.1rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;
@@ -5397,7 +5397,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
-  background-color: #f8f9fa !important; }
+  background-color: none !important; }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -7214,13 +7214,13 @@ button.bg-dark:focus {
     margin: 3rem !important; }
   .mt-md-5,
   .my-md-5 {
-    margin-top: 3rem !important; }
+    margin-top: 1rem !important; }
   .mr-md-5,
   .mx-md-5 {
-    margin-right: 3rem !important; }
+    margin-right: 1rem !important; }
   .mb-md-5,
   .my-md-5 {
-    margin-bottom: 3rem !important; }
+    margin-bottom: 1rem !important; }
   .ml-md-5,
   .mx-md-5 {
     margin-left: 3rem !important; }
@@ -7295,7 +7295,9 @@ button.bg-dark:focus {
   .px-md-4 {
     padding-left: 1.5rem !important; }
   .p-md-5 {
-    padding: 3rem !important; }
+    padding: 2rem !important; 
+   background-color:rgb(241, 241, 241);}
+  
   .pt-md-5,
   .py-md-5 {
     padding-top: 3rem !important; }
@@ -8189,13 +8191,13 @@ h1, h2, h3, h4, h5,
   background-position: center center; }
 
 .navbar {
-  padding: 15px 10px;
-  background: #fff;
+  padding: 12px 10px;
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1); 
+}
 
 .navbar-btn {
   -webkit-box-shadow: none;
@@ -8212,39 +8214,59 @@ h1, h2, h3, h4, h5,
 .wrapper {
   width: 100%; }
 
-.logotipo {
-  width: 60px;
-  padding-top: 10px;
-}
 #sidebar {
   min-width: 270px;
-  max-width: 270px;
-  background: rgba(0, 0, 0, 0.041);
-  color: #fff;
+  max-width: 300px;
+  background: white;
+  color: grey;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.3s; }
+
+
+  #sidebar.active p {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    color: #5D42DE;
+  }
+
+  #sidebar p {
+    position: relative;
+    left: 70px;
+    top: -50px;
+    font-size: 20px;
+    color: #5D42DE;
+  }
+
+  #sidebar.focus {
+    border-left: solid 1px black;
+  }
+
   #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    font-size: 15px;
+    min-width: 120px;
+    max-width: 60px;
     text-align: center; }
     #sidebar.active ul.components li {
       font-size: 14px; }
       #sidebar.active ul.components li a {
-        padding: 10px 0; }
+        padding: 40px 0; }
         #sidebar.active ul.components li a span {
           margin-right: 0;
           display: block;
           font-size: 24px; }
-    #sidebar.active .logo {
-      padding: 10px 0; }
+    #sidebar.active .logotipo {
+      padding: 10px 0px 5px 0;
+      width: 60px; }
     #sidebar.active .footer {
       display: none; }
-  #sidebar .logo {
-    display: block;
-    color: #fff;
-    font-weight: 900;
-    padding: 10px 30px;
+  #sidebar .logotipo {
+    padding: 10px 0 10px 10px;
+    width: 60px;
+    font-weight: 1000;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s; }
@@ -8272,7 +8294,7 @@ h1, h2, h3, h4, h5,
     #sidebar ul li a {
       padding: 10px 30px;
       display: block;
-      color: black;
+      color: grey;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       #sidebar ul li a span {
         margin-right: 15px; }
@@ -8280,7 +8302,7 @@ h1, h2, h3, h4, h5,
           #sidebar ul li a span {
             display: block; } }
       #sidebar ul li a:hover {
-        color: #fff; }
+        color: #5D42DE; }
     #sidebar ul li.active > a {
       background: transparent;
       color: #fff; }
@@ -8316,7 +8338,7 @@ a[data-toggle="collapse"] {
       display: none; } }
 
 #content {
-  width: 100%;
+  width: 90%;
   padding: 0;
   min-height: 100vh;
   -webkit-transition: all 0.3s;
