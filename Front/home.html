@@ -48,8 +48,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Busca cualquier cosa"
-                aria-label="Recipient's username"
+                placeholder="Busca aquí"
+                aria-label="busqueda"
                 aria-describedby="button-addon2"
               />
               <div class="input-group-append">
@@ -63,22 +63,21 @@
               </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- <a class="btn btn-primary" href="#" role="button">Link</a> -->
               <button
                 class="btn btn-primary"
+                id="adduser"
                 type="submit"
                 data-toggle="modal"
                 data-target="#exampleModal"
               >
                 <i class="fa fa-user-plus"></i>
               </button>
-              <button class="btn btn-primary" type="submit">
+              <button class="btn btn-primary" type="submit" id="dowload">
                 <i class="fa fa-download"></i>
               </button>
             </div>
           </div>
         </nav>
-
         <!-- Modal -->
         <div
           class="modal fade"
@@ -136,18 +135,22 @@
                           <th>Cargo</th>
                           <th>Canal</th>
                           <th>Interés</th>
-                          <th>Accion</th>
+                          <th></th>
                         </thead>
                         <tbody>
                           <tr>
                             <td>
-                              <input type="checkbox" name="" id="">
+                              <input
+                                type="checkbox"
+                                name=""
+                                class="selectitem"
+                              />
                             </td>
-                            <td>Camila soledad</td>
-                            <td>Argentina</td>
-                            <td>Choucair</td>
-                            <td>Analista</td>
-                            <td>Celular</td>
+                            <td>Nikki Villada</td>
+                            <td>Colombia</td>
+                            <td>Animal planet</td>
+                            <td>Gerente</td>
+                            <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
                                 <div
@@ -160,14 +163,25 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>Camila soledad</td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                class="selectitem"
+                              />
+                            </td>
+                            <td>Martin Villada</td>
                             <td>Argentina</td>
-                            <td>Choucair</td>
-                            <td>Arquitecto</td>
+                            <td>MTV Miaw</td>
+                            <td>Diseñador</td>
                             <td>Celular</td>
                             <td class="text-primary">
                               <div class="progress">
@@ -181,15 +195,26 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>Camila soledad</td>
-                            <td>Argentina</td>
-                            <td>Choucair</td>
-                            <td>UX Desihner</td>
-                            <td>Celular</td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                class="selectitem"
+                              />
+                            </td>
+                            <td>Minie Villada</td>
+                            <td>Australia</td>
+                            <td>Discovery</td>
+                            <td>Actriz</td>
+                            <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
                                 <div
@@ -202,12 +227,23 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>Camila soledad</td>
-                            <td>Argentina</td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                class="selectitem"
+                              />
+                            </td>
+                            <td>María Jimenez</td>
+                            <td>India</td>
                             <td>Choucair</td>
                             <td>Developer</td>
                             <td>Celular</td>
@@ -223,13 +259,24 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>Camila soledad</td>
-                            <td>Argentina</td>
-                            <td>Choucair</td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                class="selectitem"
+                              />
+                            </td>
+                            <td>Valentin Villada</td>
+                            <td>Australia</td>
+                            <td>Google</td>
                             <td>Sales</td>
                             <td>Celular</td>
                             <td class="text-primary">
@@ -244,15 +291,26 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>Camila soledad</td>
-                            <td>Argentina</td>
-                            <td>Choucair</td>
-                            <td>Analista</td>
-                            <td>Celular</td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                class="selectitem"
+                              />
+                            </td>
+                            <td>Arya Jimenez</td>
+                            <td>Colombia</td>
+                            <td>Crazy S.A.S</td>
+                            <td>Arquitecta</td>
+                            <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
                                 <div
@@ -265,7 +323,11 @@
                                 ></div>
                               </div>
                             </td>
-                            <td>***</td>
+                            <td>
+                              <button class="edititem">
+                                <i class="fa fa-pencil"></i>
+                              </button>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
