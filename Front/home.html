@@ -27,7 +27,7 @@
             <a href="#"><span class="fa fa-address-book"></span> Contactos</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-building-o"></span> Compañías</a>
+            <a href="#"><span class="fa fa-building"></span> Compañías</a>
           </li>
           <li>
             <a href="#"><span class="fa fa-users"></span> Usuarios</a>
@@ -68,7 +68,7 @@
                 id="adduser"
                 type="submit"
                 data-toggle="modal"
-                data-target="#exampleModal"
+                data-target="#newContact"
               >
                 <i class="fa fa-user-plus"></i>
               </button>
@@ -81,13 +81,13 @@
         <!-- Modal -->
         <div
           class="modal fade"
-          id="exampleModal"
+          id="newContact"
           tabindex="-1"
           role="dialog"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
@@ -102,7 +102,139 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">...</div>
+              <div class="modal-body">
+                <img src="" alt="" />
+                <!--Aqui comienza el formulario de contacto-->
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom01">Nombre</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom01"
+                        value="Mark"
+                        required
+                      />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom02">Apellido</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom02"
+                        value="Otto"
+                        required
+                      />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Empresa</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Cargo</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </div>
+
+                  <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <label for="validationCustom04">Región</label>
+                      <select
+                        class="custom-select"
+                        id="validationCustom04"
+                        required
+                      >
+                        <option selected disabled value="">Choose...</option>
+                        <option>...</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom03">País</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="validationCustom03"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom03">Ciudad</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="validationCustom03"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationCustom05">Dirección</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom05"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="customRange1">Interés</label>
+                    <input
+                      type="range"
+                      class="custom-range"
+                      id="customRange1"
+                    />
+                  </div>
+                  <label for="validationCustom04">Canal preferido</label>
+                  <select
+                    class="custom-select"
+                    id="validationCustom04"
+                    required
+                  >
+                    <option selected disabled value="">Choose...</option>
+                    <option>...</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </form>
+                <!--Aqui Termina el formulario de contacto-->
+              </div>
               <div class="modal-footer">
                 <button
                   type="button"
