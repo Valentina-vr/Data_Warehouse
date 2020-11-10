@@ -2142,7 +2142,7 @@ select.form-control:focus::-ms-value {
 .form-control-file,
 .form-control-range {
   display: block;
-  width: 100%;
+  width: 80%;
 }
 
 .col-form-label {
@@ -4242,7 +4242,7 @@ input[type="button"].btn-block {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #007bff;
+  background-color: gray;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out,
@@ -4280,7 +4280,7 @@ input[type="button"].btn-block {
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #007bff;
+  background-color: gray;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out,
@@ -4321,7 +4321,7 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #007bff;
+  background-color: gray;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out,
@@ -6296,7 +6296,16 @@ a.close.disabled {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 4rem;
+  background-image: url('../../Images/fondo\ modal.png');
+}
+
+.modal-body .form-control {
+  -webkit-box-shadow: none;
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  height: 30px;
+
 }
 
 .modal-footer {
@@ -6355,6 +6364,7 @@ a.close.disabled {
   .modal-lg,
   .modal-xl {
     max-width: 800px;
+    background-color: grey;
   }
 }
 
@@ -10689,7 +10699,7 @@ h5,
   line-height: 1.5;
   font-weight: 400;
   font-family: "Poppins", Arial, sans-serif;
-  color: #000;
+  color: rgb(85, 78, 78);
 }
 
 .ftco-section {
