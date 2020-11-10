@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Assets/Styles/css/style.css" />
-    <link rel="icon" href="./Assets/Images/logo.png" type="image/png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
-    <title>Advantage - Data Warehouse</title>
-  </head>
-  <body>
-    <div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar" class="active">
-        <img
-          id="sidebarCollapse"
-          class="logotipo"
-          src="./Assets/Images/logo.png"
-          alt=""
-        />
-        <p>Data Warehouse</p>
-        <ul class="list-unstyled components mb-5">
-          <li>
-            <a href="#"><span class="fa fa-address-book"></span> Contactos</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-building"></span> Compañías</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-users"></span> Usuarios</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-map"></span>Región/Ciudad</a>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Assets/Styles/css/style.css" />
+  <link rel="icon" href="./Assets/Images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <div class="footer"></div>
-      </nav>
+  <title>Advantage - Data Warehouse</title>
+</head>
 
+<body>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <img id="sidebarCollapse" class="logotipo" src="./Assets/Images/logo.png" alt="" />
+      <p>Data Warehouse</p>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="./contacts.html"><span class="fa fa-address-book"></span> Contactos</a>
+        </li>
+        <li>
+          <a href="./company.html"><span class="fa fa-building"></span> Compañías</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-users"></span> Usuarios</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-map"></span>Región/Ciudad</a>
+        </li>
+      </ul>
+
+      <div class="footer"></div>
+    </nav>
+
+    <main>
       <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Busca aquí"
-                aria-label="busqueda"
-                aria-describedby="button-addon2"
-              />
+              <input type="text" class="form-control" placeholder="Busca aquí" aria-label="busqueda"
+                aria-describedby="button-addon2" />
               <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button
-                class="btn btn-primary"
-                id="adduser"
-                type="submit"
-                data-toggle="modal"
-                data-target="#newContact"
-              >
+              <button class="btn btn-primary" id="adduser" type="submit" data-toggle="modal" data-target="#newContact">
                 <i class="fa fa-user-plus"></i>
               </button>
               <button class="btn btn-primary" type="submit" id="dowload">
@@ -79,26 +59,15 @@
           </div>
         </nav>
         <!-- Modal -->
-        <div
-          class="modal fade"
-          id="newContact"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
+        <div class="modal fade" id="newContact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
                   Nuevo contacto
                 </h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -109,65 +78,34 @@
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label for="validationCustom01">Nombre</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom01"
-                        value="Mark"
-                        required
-                      />
+                      <input type="text" class="form-control" id="validationCustom01" value="Mark" required />
                       <div class="valid-feedback">Looks good!</div>
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="validationCustom02">Apellido</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom02"
-                        value="Otto"
-                        required
-                      />
+                      <input type="text" class="form-control" id="validationCustom02" value="Otto" required />
                       <div class="valid-feedback">Looks good!</div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   </div>
                   <div class="form-row">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Empresa</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Empresa</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Cargo</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Cargo</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
-                </div>
 
                   <div class="form-row">
                     <div class="col-md-3 mb-3">
                       <label for="validationCustom04">Región</label>
-                      <select
-                        class="custom-select"
-                        id="validationCustom04"
-                        required
-                      >
+                      <select class="custom-select" id="validationCustom04" required>
                         <option selected disabled value="">Choose...</option>
                         <option>...</option>
                       </select>
@@ -176,24 +114,14 @@
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="validationCustom03">País</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="validationCustom03"
-                          required
-                        />
+                        <input type="text" class="form-control" id="validationCustom03" required />
                         <div class="invalid-feedback">
                           Please provide a valid city.
                         </div>
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Ciudad</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="validationCustom03"
-                          required
-                        />
+                        <input type="text" class="form-control" id="validationCustom03" required />
                         <div class="invalid-feedback">
                           Please provide a valid city.
                         </div>
@@ -201,12 +129,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationCustom05">Dirección</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom05"
-                        required
-                      />
+                      <input type="text" class="form-control" id="validationCustom05" required />
                       <div class="invalid-feedback">
                         Please provide a valid zip.
                       </div>
@@ -214,18 +137,10 @@
                   </div>
                   <div>
                     <label for="customRange1">Interés</label>
-                    <input
-                      type="range"
-                      class="custom-range"
-                      id="customRange1"
-                    />
+                    <input type="range" class="custom-range" id="customRange1" />
                   </div>
                   <label for="validationCustom04">Canal preferido</label>
-                  <select
-                    class="custom-select"
-                    id="validationCustom04"
-                    required
-                  >
+                  <select class="custom-select" id="validationCustom04" required>
                     <option selected disabled value="">Choose...</option>
                     <option>...</option>
                   </select>
@@ -236,11 +151,7 @@
                 <!--Aqui Termina el formulario de contacto-->
               </div>
               <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
                   Cerrar
                 </button>
                 <button type="button" class="btn btn-primary">Guardar</button>
@@ -272,11 +183,7 @@
                         <tbody>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" class="selectitem" />
                             </td>
                             <td>Nikki Villada</td>
                             <td>Colombia</td>
@@ -285,14 +192,8 @@
                             <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-info"
-                                  role="progressbar"
-                                  style="width: 50%"
-                                  aria-valuenow="50"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%"
+                                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -303,12 +204,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                id=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" id="" class="selectitem" />
                             </td>
                             <td>Martin Villada</td>
                             <td>Argentina</td>
@@ -317,14 +213,8 @@
                             <td>Celular</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-success"
-                                  role="progressbar"
-                                  style="width: 25%"
-                                  aria-valuenow="25"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -335,12 +225,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                id=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" id="" class="selectitem" />
                             </td>
                             <td>Minie Villada</td>
                             <td>Australia</td>
@@ -349,14 +234,8 @@
                             <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-warning"
-                                  role="progressbar"
-                                  style="width: 75%"
-                                  aria-valuenow="75"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
+                                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -367,12 +246,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                id=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" id="" class="selectitem" />
                             </td>
                             <td>María Jimenez</td>
                             <td>India</td>
@@ -381,14 +255,8 @@
                             <td>Celular</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-warning"
-                                  role="progressbar"
-                                  style="width: 75%"
-                                  aria-valuenow="75"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
+                                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -399,12 +267,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                id=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" id="" class="selectitem" />
                             </td>
                             <td>Valentin Villada</td>
                             <td>Australia</td>
@@ -413,14 +276,8 @@
                             <td>Celular</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-danger"
-                                  role="progressbar"
-                                  style="width: 100%"
-                                  aria-valuenow="100"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
+                                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -431,12 +288,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                id=""
-                                class="selectitem"
-                              />
+                              <input type="checkbox" name="" id="" class="selectitem" />
                             </td>
                             <td>Arya Jimenez</td>
                             <td>Colombia</td>
@@ -445,14 +297,8 @@
                             <td>Email</td>
                             <td class="text-primary">
                               <div class="progress">
-                                <div
-                                  class="progress-bar bg-success"
-                                  role="progressbar"
-                                  style="width: 25%"
-                                  aria-valuenow="25"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                ></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </td>
                             <td>
@@ -471,10 +317,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/popper.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/main.js"></script>
-  </body>
+  </div>
+
+  </main>
+
+
+  <script src="./JS/jquery.min.js"></script>
+  <script src="./JS/popper.js"></script>
+  <script src="./JS/bootstrap.min.js"></script>
+  <script src="./JS/main.js"></script>
+</body>
+
 </html>
