@@ -5,10 +5,6 @@ const sequelize = require('../server');
 const contactModel = sequelize.define(
   'contacts',
   {
-    img: {
-      type: DataTypes.STRING(50),
-			allowNull: false,
-    },
     name: {
       type: DataTypes.STRING(50),
 			allowNull: false,
