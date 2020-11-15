@@ -30,7 +30,6 @@ const companyModel = sequelize.define(
       type: DataTypes.STRING(50),
 			allowNull: false,
     }
-    
   },
   {
     timestamps: true

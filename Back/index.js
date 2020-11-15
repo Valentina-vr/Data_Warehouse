@@ -1,6 +1,5 @@
 const express = require('express');
 const helmet = require('helmet');
-const jwt = require("jsonwebtoken");
 const sequelize = require("./Database/server");
 const cors = require("cors");
 require('dotenv').config();
@@ -25,14 +24,16 @@ regionModel.sync();
 userModel.sync();
 
 //Routes require
-const userRoute = require("./Routes/Users/user_routes");
-
-//Routes
-app.use("/users", userRoute);
+const userRoute = require("./Routes/user_routes");
+const companyRoute = require("./Routes/company_routes");
 
 //Cors
 app.use(cors());
 app.options("*", cors());
+
+//Routes
+app.use("/users", userRoute);
+app.use("/company", companyRoute);
 
 //Starting the server
 app.listen(process.env.PORT, ()=> {
