@@ -23,17 +23,19 @@ countryModel.sync();
 regionModel.sync();
 userModel.sync();
 
-//Routes require
-const userRoute = require("./Routes/user_routes");
-const companyRoute = require("./Routes/company_routes");
-
 //Cors
 app.use(cors());
 app.options("*", cors());
 
+//Routes require
+const userRoute = require("./Routes/user_routes");
+const companyRoute = require("./Routes/company_routes");
+const contactRoute = require("./Routes/contact_routes");
+
 //Routes
 app.use("/users", userRoute);
 app.use("/company", companyRoute);
+app.use("/contact", contactRoute);
 
 //Starting the server
 app.listen(process.env.PORT, ()=> {

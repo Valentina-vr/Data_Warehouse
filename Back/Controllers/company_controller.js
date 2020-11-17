@@ -1,6 +1,6 @@
 const Company = require("../Database/Models/company_model");
 
-const createCompanies = async (req, res) => {
+const createCompany = async (req, res) => {
   const { name, country, city, address, email, phone } = req.body;
   const newCompany = new Company({
     name,
@@ -33,7 +33,7 @@ const findCompaniesById = (req, res) => {
   });
 };
 
-const updateCompaniesById = (req, res) => {
+const updateCompany = (req, res) => {
   let id = req.params.id;
   let data = req.body;
   Company.update(data, { where: { id: id } })
@@ -49,7 +49,7 @@ const updateCompaniesById = (req, res) => {
     });
 };
 
-const deleteCompaniesById = (req, res) => {
+const deleteCompany = (req, res) => {
   let id = req.params.id;
   Company.destroy({ where: { id: id } })
     .then((company) => {
@@ -66,8 +66,8 @@ const deleteCompaniesById = (req, res) => {
 
 module.exports = {
   findCompanies,
-  createCompanies,
+  createCompany,
   findCompaniesById,
-  updateCompaniesById,
-  deleteCompaniesById,
+  updateCompany,
+  deleteCompany,
 };

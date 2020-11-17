@@ -3,30 +3,30 @@ const router = express.Router();
 
 const {
   findCompanies,
-  createCompanies,
+  createCompany,
   findCompaniesById,
-  updateCompaniesById,
-  deleteCompaniesById,
+  updateCompany,
+  deleteCompany,
 } = require("../Controllers/company_controller");
 
 router.post("/create", (req, res) => {
-  createCompanies(req, res);
+  createCompany(req, res);
 });
 
 router.get("/find", (req, res) => {
   findCompanies(req, res);
 });
 
-router.get("/findCompaniesById/:id", (req, res) => {
+router.get("/findCompany/:id", (req, res) => {
   findCompaniesById(req, res);
 });
 
-router.put("/updateCompaniesById/:id", (req, res) => {
-  updateCompaniesById(req, res);
+router.put("/updatecompany/:id", (req, res) => {
+  updateCompany(req, res);
 });
 
-router.delete("/deleteCompaniesById/:id", (req, res) => {
-  deleteCompaniesById(req, res);
+router.delete("/deleteCompany/:id", (req, res) => {
+  deleteCompany(req, res);
 });
 
 module.exports = router;
