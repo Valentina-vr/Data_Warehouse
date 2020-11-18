@@ -36,19 +36,34 @@ const find = (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({
-        message: "Sorry, the server has presented an error. Try again later",
+        message: "Oh oh, the server has presented an error, try again later x_x",
       });
     });
 };
 
-const findContactById = (req, res) => {
+const findContact = (req, res) => {
   let id = req.params.id;
   Contact.findOne({ where: { id: id } }).then((contact) => {
     res.status(200).json(contact);
   });
 };
 
-const updateContactById = (req, res) => {
+const deleteContact = (req, res) => {
+  let id = req.params.id;
+  Contact.destroy({ where: { id: id } })
+    .then((contact) => {
+      if (contact === 1)
+        res.status(200).json({ message: "Contact has been deleted successfully" });
+      else res.status(400).json({ message: "Contact could not be deleted" });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "Oh oh, the server has presented an error, try again later x_x",
+      });
+    });
+};
+
+const updatecontact = (req, res) => {
   let id = req.params.id;
   let data = req.body;
 
@@ -56,27 +71,12 @@ const updateContactById = (req, res) => {
   Contact.update(data, { where: { id: id } })
     .then((contact) => {
       if (contact[0] === 1)
-        res.status(200).json({ message: "Contact has been updated." });
+        res.status(200).json({ message: "contact has been updated successfully" });
       else res.status(400).json({ message: "Contact could not be updated" });
     })
     .catch((err) => {
       res.status(500).json({
-        message: "Sorry, the server has presented an error. Try again later",
-      });
-    });
-};
-
-const deleteContactById = (req, res) => {
-  let id = req.params.id;
-  Contact.destroy({ where: { id: id } })
-    .then((contact) => {
-      if (contact === 1)
-        res.status(200).json({ message: "Contact has been deleted." });
-      else res.status(400).json({ message: "Contact could not be deleted" });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        message: "Sorry, the server has presented an error. Try again later",
+        message: "Oh oh, the server has presented an error, try again later x_x",
       });
     });
 };
@@ -84,7 +84,7 @@ const deleteContactById = (req, res) => {
 module.exports = {
   createContact,
   find,
-  findContactById,
-  updateContactById,
-  deleteContactById,
+  findContact,
+  updatecontact,
+  deleteContact,
 };

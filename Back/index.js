@@ -31,11 +31,17 @@ app.options("*", cors());
 const userRoute = require("./Routes/user_routes");
 const companyRoute = require("./Routes/company_routes");
 const contactRoute = require("./Routes/contact_routes");
+const countryRoute = require("./Routes/country_routes");
+const regionRoute = require("./Routes/region_routes");
+const cityRoute = require("./Routes/city_routes");
 
 //Routes
 app.use("/users", userRoute);
 app.use("/company", companyRoute);
 app.use("/contact", contactRoute);
+app.use("/country", countryRoute);
+app.use("/region", regionRoute);
+app.use("/city", cityRoute);
 
 //Starting the server
 app.listen(process.env.PORT, ()=> {
