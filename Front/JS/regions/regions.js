@@ -6,34 +6,27 @@ let modalConfirm = document.getElementById("confirmDelete");
 let addRegionBtn = document.getElementById("addRegionBtn");
 let ModalLabelRegion = document.getElementById("ModalLabelRegion");
 
-//OPEN MODAL
-let open = () => {
-    $("#addRegion").modal("show");
-};
-
-//CLOSE MODAL
-let close = () => {
-    $("#addRegion").modal("hide");
-};
-
-//CLEAR MODAL FIELDS
 let clear = () => {
-    regionName.value = "";
+  regionName.value = "";
+};
+
+let close = () => {
+  $("#addRegion").modal("hide");
 };
 
 let renderRegions = () => {
-    fetch("http://localhost:3000/region/list", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    }).then((regionCard) => {
-      console.log(regionCard);
-      regionCard.json().then((regionCard) => {
-        regionCard.forEach((regionC) => {
-          const { id, name } = regionC;
-          let region = `<section class="region" id=regionId${id}>
+  fetch("http://localhost:3000/region/list", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  }).then((regionCard) => {
+    console.log(regionCard);
+    regionCard.json().then((regionCard) => {
+      regionCard.forEach((regionC) => {
+        const { id, name } = regionC;
+        let region = `<section class="region" id=regionId${id}>
           <h2 class="regionTittle">
               <b><a class="regionTree" data-toggle="collapse" href="#regionCollapse${id}" role="button" aria-expanded="false"
                   aria-controls="multiCollapseExample1">${name}</a></b>
@@ -51,10 +44,50 @@ let renderRegions = () => {
               </div>
           </div>
       </section>`;
-          regionContainer.insertAdjacentHTML("beforeend", region);
-          renderCountries(id);
-        });
+        regionContainer.insertAdjacentHTML("beforeend", region);
+        renderCountries(id);
       });
     });
-  };
-  renderRegions();
+  });
+};
+renderRegions();
+
+let validationRegion = () => {
+  let regionData = regionName.value;
+  console.log(regionData);
+
+  if (regionData === "") {
+    regionMessage.innerHTML =
+      "*Por favor ingrese el nombre de la región a agregar";
+  } else {
+    let dataObject = {
+      name: regionData,
+    };
+    let data = JSON.stringify(dataObject);
+    addRegion(data);
+  }
+};
+
+let addRegion = (data) => {
+  event.preventDefault;
+  fetch("http://localhost:8000/region/createRegion", {
+    method: "POST",
+    body: data,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  }).then((res) => {
+    if (res.status === 400) {
+      regionMessage.innerHTML = "*Ya existe una región con este nombre";
+    } else {
+      res.json().then((info) => {
+        console.log(info);
+        const { id, name } = info;
+        let regionCard = ``;
+        regionContainer.insertAdjacentHTML("beforeend", regionCard);
+        clear();
+      });
+    }
+  });
+};

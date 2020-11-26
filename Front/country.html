@@ -26,7 +26,7 @@
         <li>
           <a href="./users.html"><span class="fa fa-users"></span> Usuarios</a>
         </li>
-        <li >
+        <li>
           <a href="./country.html"><span class="fa fa-map sitenow"></span>Región/Ciudad</a>
         </li>
       </ul>
@@ -66,17 +66,17 @@
               <form class="needs-validation" novalidate>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
-                    <label for="validationCustom01">Nombre de la región</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="" required />
-                    <div class="valid-feedback">Looks good!</div>
+                    <label for="regionName">Nombre de la región</label>
+                    <input type="text" class="form-control" id="regionName" value=""/>
+                    <p id="regionMessage" class="regionMessage"></p>
                   </div>
                 </div>
             </div>
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+              <button type="button" class="btn btn-primary"  onclick="validationRegion()" id="addRegionBtn">Guardar región</button>
+            </div>
 
           </div>
         </div>
@@ -109,15 +109,14 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+            </div>
 
           </div>
         </div>
       </div>
 
       <!-- MODAL CIUDADES -->
-      <div class="modal fade" id="addCity" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="addCity" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -143,32 +142,25 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+            </div>
 
           </div>
         </div>
       </div>
 
-       <!--CONTENIDO-->
-       <div>
-          <h3 class="mb-4">Regiones, países y ciudades</h3> 
-          <button class="btn btnaddRegion" id="" type="submit" data-toggle="modal" data-target="#addRegion">
-            <i class="fa fa-plus"></i> Nueva región
-          </button>
-       </div>
-      
-      <section class="region"  id="regionsContainer">
+      <!--CONTENIDO-->
+      <div>
+        <h3 class="mb-4">Regiones, países y ciudades</h3>
+        <button class="btn btnaddRegion" id="" type="submit" data-toggle="modal" data-target="#addRegion">
+          <i class="fa fa-plus"></i> Nueva región
+        </button>
+      </div>
+
+      <section class="region" id="regionsContainer">
         <div id="regionCard">
           <h1 class="regionTittle">
-            <a
-              class="regionTree"
-              data-toggle="collapse"
-              href="#regionCollapse"
-              role="button"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample1"
-              >Sudamerica</a
-            >
+            <a class="regionTree" data-toggle="collapse" href="#regionCollapse" role="button" aria-expanded="false"
+              aria-controls="multiCollapseExample1">Sudamerica</a>
           </h1>
           <i class="fa fa-pencil"></i>
           <i class="far fa-trash-alt" onclick="regionOpenDelete()"></i>
@@ -181,15 +173,8 @@
                 <div class="card card-bodyCo">
                   <div class="countryContainer">
                     <h2 class="coTitle">
-                      <a
-                        class="regionTree"
-                        data-toggle="collapse"
-                        href="#cityCollapse"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="multiCollapseExample1"
-                        >Colombia</a
-                      >
+                      <a class="regionTree" data-toggle="collapse" href="#cityCollapse" role="button"
+                        aria-expanded="false" aria-controls="multiCollapseExample1">Colombia</a>
                     </h2>
                     <i class="fa fa-pencil"></i>
                     <i class="fa fa-trash-alt"></i>
@@ -216,18 +201,13 @@
             </div>
           </div>
         </div>
-
-
       </section>
     </div>
-
-   
-
   </div>
   </div>
-
+  <script src="./JS/regions/regions.js"></script>
   <script src="./JS/jquery.min.js"></script>
-  <script src="./JS/popper.js"></script>
   <script src="./JS/bootstrap.min.js"></script>
   <script src="./JS/main.js"></script>
+
   </div>
