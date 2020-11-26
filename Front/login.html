@@ -11,20 +11,22 @@
     <main id="autenticacion">
         <div class="login">
             <img src="./Assets/Images/logo.png" alt="Logotipo advantage">
-            <form action="">
+            <form action="" id="form_login">
                 <label class="login-field-icon fui-user" for="login-name">Usuario</label>
                 <input type="text" class="login-field" value="" placeholder="tunombre@gmail.com" id="login-name">
 
                 <label class="login-field-icon fui-lock" for="login-pass">Contraseña</label>
                 <input type="password" class="login-field" value="" placeholder="****" id="login-pass">
 
-                <a class="btn" href="./contacts.html">INICIAR SESIÓN</a>
-
+                <button class="btn" onclick="login()"  href="">INICIAR SESIÓN</button>
+                
                 <div class="signup">
+                    <p id="warninglogin" class="lackFields"></p><br>
                     <p class="">¿No tienes una cuenta? <a href="" id="signup-link">Registrate aquí</a></p>
                  </div>
             </form>
         </div>
     </main>
+    <script src="./JS/users/login.js"></script>
 </body>
 </html>

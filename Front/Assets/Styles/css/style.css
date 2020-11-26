@@ -4932,6 +4932,8 @@ input[type="button"].btn-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 98%;
+  margin-bottom: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -10772,7 +10774,7 @@ h5,
   position: relative;
   left: 0;
   top: 0;
-  font-size: 12px;
+  font-size: 8px;
   color: #5d42de;
 }
 
@@ -10987,3 +10989,95 @@ input[type="checkbox"]:checked + label {
   color: grey;
 }
 
+.fa-trash:before{
+  padding-left: 15px;
+}
+
+.fa-trash:hover{
+  color: rgb(253, 79, 79);
+  font-size: 22px;
+}
+
+.region {
+  width: 95%;
+  margin-top: 1px;
+  border: transparent 1px;
+  border-radius: 5px;
+  font-size: large;
+  padding-left: 20px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.652);
+}
+
+.region .regionTittle{
+  padding-top: 5px;
+  font-size: 25px;
+  display: inline-block;
+
+}
+
+.region .regionTree {
+  text-decoration: none;
+  color: grey;
+  font-size: 21px;
+  padding-right: 25px;
+}
+
+.region .card-bodyCo{
+  border: transparent 1px;
+  font-size: large;
+  padding-left: 10px;
+}
+
+
+.region .card-bodyCo .countryContainer{
+  border: none;
+  font-size: large;
+}
+
+.region .card-bodyCo .countryContainer .coTitle {
+  display: inline-block;
+  border: none;
+}
+
+.cityContainer {
+  border: transparent 1px;
+}
+
+.card-bodyCi{
+  border: transparent 1px;
+  display: grid;
+  grid-template-columns: 10% 3% 10%;
+}
+
+
+.col {
+  width: 100%;
+}
+
+.plus_accordion {
+  color: grey;
+}
+
+.plus_accordion:hover {
+  color: rgb(0, 213, 53);
+  font-size: 20px;
+}
+
+.btnaddRegion {
+  margin: 22px;
+  background-color: white;
+  color: grey;
+  font-size: 15px;
+}
+
+.btnaddRegion:hover {
+  margin: 22px;
+  background-color:#5d42de;
+  color: white;
+  font-size: 15px;
+}
+
+.sitenow{
+  color:#5d42de;
+}

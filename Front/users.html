@@ -15,16 +15,16 @@
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar" class="active">
       <img id="sidebarCollapse" class="logotipo" src="./Assets/Images/logo.png" alt="" />
-      <p>Data Warehouse</p>
+      <p>DATA WAREHOUSE</p>
       <ul class="list-unstyled components mb-5">
         <li>
-          <a href="./contacts.html"><span class="fa fa-address-book"></span> Contactos</a>
+          <a href="./contacts.html"><span class="fa fa-address-book"></span>Contactos</a>
         </li>
         <li>
-          <a href="./company.html"><span class="fa fa-building"></span> Compañías</a>
+          <a href="./company.html"><span class="fa fa-building"></span>Compañías</a>
         </li>
         <li>
-          <a href="./users.html"><span class="fa fa-users"></span> Usuarios</a>
+          <a href="./users.html"><span class="fa fa-users sitenow"></span>Usuarios</a>
         </li>
         <li>
           <a href="./country.html"><span class="fa fa-map"></span>Región/Ciudad</a>
@@ -33,223 +33,110 @@
 
       <div class="footer"></div>
     </nav>
-
-
-      <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Busca aquí"
-                aria-label="busqueda"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button
-                class="btn btn-primary"
-                id="adduser"
-                type="submit"
-                data-toggle="modal"
-                data-target="#newUser"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-              <button class="btn btn-primary" type="submit" id="dowload">
-                <i class="fa fa-download"></i>
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Busca aquí" aria-label="busqueda"
+              aria-describedby="button-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="fa fa-search"></i>
               </button>
             </div>
           </div>
-        </nav>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-primary" id="adduser" type="submit" data-toggle="modal" data-target="#newUser">
+              <i class="fa fa-plus"></i>
+            </button>
+            <button class="btn btn-primary" type="submit" id="dowload">
+              <i class="fa fa-download"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
 
-                <!-- Modal -->
-                <div
-                class="modal fade"
-                id="newUser"
-                tabindex="-1"
-                aria-labelledby="ModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="ModalLabel">Nuevo Usuario</h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="userForm">
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputUserName">Nombres</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="inputUserName"
-                            />
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputUserLastName">Apellidos</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="inputUserLastName"
-                            />
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputEmail">Email</label>
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="inputEmail"
-                            />
-                            <p class="emailExist" id="emailExist"></p>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputProfile">Perfil</label>
-                            <select id="inputProfile" class="form-control">
-                              <option selected></option>
-                              <option>Usuario</option>
-                              <option>Administrador</option>
-                            </select>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputPassword">Contraseña</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="inputPassword"
-                            />
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputPasswordConf">Repetir Contraseña</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="inputPasswordConf"
-                            />
-                            <p id="passwordMessage" class="passwordMessage"></p>
-                          </div>
-                        </div>
-                        <p id="lackFields" class="lackFields"></p>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Limpiar
-                      </button>
-                      <button
-                          type="button"
-                          class="btn btn-primary"
-                          onclick="getData()"
-                          id="saveUser"
-                        >
-                          Guardar Usuario
-                        </button>
-                    </div>
+      <!-- MODAL AGREGAR USUARIOS -->
+      <div class="modal fade" id="newUser" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Ususario</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="userForm">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputUserName">Nombres</label>
+                    <input type="text" class="form-control" id="inputUserName" />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputUserLastName">Apellidos</label>
+                    <input type="text" class="form-control" id="inputUserLastName" />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" />
+                    <p class="emailExist" id="emailExist"></p>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputProfile">Perfil</label>
+                    <select id="inputProfile" class="form-control">
+                      <option selected></option>
+                      <option>Usuario</option>
+                      <option>Administrador</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword">Contraseña</label>
+                    <input type="password" class="form-control" id="inputPassword" />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPasswordConf">Repetir Contraseña</label>
+                    <input type="password" class="form-control" id="inputPasswordConf" />
+                    <p id="passwordMessage" class="passwordMessage"></p>
                   </div>
                 </div>
-              </div>
+                <p id="warningUser" class="lackFields"></p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Limpiar
+              </button>
+              <button type="button" class="btn btn-primary" onclick="validationAdd()" id="saveUser">
+                Guardar Usuario
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!--tabla-->
-        <h3 class="mb-4">Usuarios</h3>
-        <div class="content">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead class="text-primary">
-                          <th></th>
-                          <th>Nombres</th>
-                          <th>Apellidos</th>
-                          <th>Email</th>
-                          <th>Perfil</th>
-                          <th></th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                class="selectitem"
-                              />
-                            </td>
-                            <td>Valentina</td>
-                            <td>Villada Rendón</td>
-                            <td>valentina@gmail.com</td>
-                            <td>Administrador</td>
-                            <td>
-                              <button class="edititem">
-                                <i class="fa fa-pencil"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <tr>
-                                <td>
-                                  <input
-                                    type="checkbox"
-                                    name=""
-                                    class="selectitem"
-                                  />
-                                </td>
-                                <td>Julanita</td>
-                                <td>Perez</td>
-                                <td>julanita@gmail.com</td>
-                                <td>Developer</td>
-                                <td>
-                                  <button class="edititem">
-                                    <i class="fa fa-pencil"></i>
-                                  </button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <input
-                                    type="checkbox"
-                                    name=""
-                                    class="selectitem"
-                                  />
-                                </td>
-                                <td>Martin</td>
-                                <td>Villada Rendón</td>
-                                <td>California</td>
-                                <td>Comercial</td>
-                                <td>
-                                  <button class="edititem">
-                                    <i class="fa fa-pencil"></i>
-                                  </button>
-                                </td>
-                              </tr>
-                        </tbody>
-                      </table>
-                    </div>
+      <!--tabla-->
+      <h3 class="mb-4">Usuarios</h3>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <th></th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Perfil</th>
+                        <th></th>
+                      </thead>
+                      <tbody id="users_container">
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -258,9 +145,35 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/popper.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/main.js"></script>
+  <!-- Confirmación de eliminado -->
+  <div class="modal fade" id="deleteConfirm" data-toggle="modal" tabindex="-1"
+  aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteConfirmLabel">
+                  ¿Estás seguro que deseas eliminar el registro?
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="confirmDelete" data-dismiss="modal">
+                  Si
+              </button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                  No
+              </button>
+          </div>
+      </div>
+  </div>
 </div>
+
+  <script src="./JS/jquery.min.js"></script>
+  <script src="./JS/bootstrap.min.js"></script>
+  <script src="./JS/main.js"></script>
+  <script src="./JS/users/users.js"></script>
+  </div>

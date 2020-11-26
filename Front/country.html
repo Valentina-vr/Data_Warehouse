@@ -15,7 +15,7 @@
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar" class="active">
       <img id="sidebarCollapse" class="logotipo" src="./Assets/Images/logo.png" alt="" />
-      <p>Data Warehouse</p>
+      <p>DATA WAREHOUSE</p>
       <ul class="list-unstyled components mb-5">
         <li>
           <a href="./contacts.html"><span class="fa fa-address-book"></span> Contactos</a>
@@ -26,232 +26,208 @@
         <li>
           <a href="./users.html"><span class="fa fa-users"></span> Usuarios</a>
         </li>
-        <li>
-          <a href="./country.html"><span class="fa fa-map"></span>Región/Ciudad</a>
+        <li >
+          <a href="./country.html"><span class="fa fa-map sitenow"></span>Región/Ciudad</a>
         </li>
       </ul>
 
       <div class="footer"></div>
     </nav>
 
-
-      <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Busca aquí"
-                aria-label="busqueda"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button
-                class="btn btn-primary"
-                id="adduser"
-                type="submit"
-                data-toggle="modal"
-                data-target="#newCompany"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-              <button class="btn btn-primary" type="submit" id="dowload">
-                <i class="fa fa-download"></i>
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Busca aquí" aria-label="busqueda"
+              aria-describedby="button-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="fa fa-search"></i>
               </button>
             </div>
           </div>
-        </nav>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="newCompany"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Nuevo contacto
-                </h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="" alt="" />
-                <!--Aqui comienza el formulario de contacto-->
-                <form class="needs-validation" novalidate>
-                  <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                      <label for="validationCustom01">Nombre</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom01"
-                        value="Mark"
-                        required
-                      />
-                      <div class="valid-feedback">Looks good!</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label for="validationCustom02">Apellido</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom02"
-                        value="Otto"
-                        required
-                      />
-                      <div class="valid-feedback">Looks good!</div>
-                    </div>
+        </div>
+      </nav>
+      <!-- MODAL REGIONES -->
+      <div class="modal fade" id="addRegion" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">
+                Región
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="" />
+              <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Nombre de la región</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="" required />
+                    <div class="valid-feedback">Looks good!</div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Empresa</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Cargo</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                  </div>
+                </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
 
-                  <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                      <label for="validationCustom04">Región</label>
-                      <select
-                        class="custom-select"
-                        id="validationCustom04"
-                        required
+          </div>
+        </div>
+      </div>
+      <!-- MODAL PAISES -->
+      <div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">
+                País
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="" />
+              <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Nombre del país</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="" required />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+                </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL CIUDADES -->
+      <div class="modal fade" id="addCity" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">
+                Ciudad
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="" />
+              <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Nombre de la ciudad</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="" required />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+                </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+       <!--CONTENIDO-->
+       <div>
+          <h3 class="mb-4">Regiones, países y ciudades</h3> 
+          <button class="btn btnaddRegion" id="" type="submit" data-toggle="modal" data-target="#addRegion">
+            <i class="fa fa-plus"></i> Nueva región
+          </button>
+       </div>
+      
+      <section class="region"  id="regionsContainer">
+        <div id="regionCard">
+          <h1 class="regionTittle">
+            <a
+              class="regionTree"
+              data-toggle="collapse"
+              href="#regionCollapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="multiCollapseExample1"
+              >Sudamerica</a
+            >
+          </h1>
+          <i class="fa fa-pencil"></i>
+          <i class="far fa-trash-alt" onclick="regionOpenDelete()"></i>
+          <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCountry">
+            <i class="fa fa-plus"></i>
+          </button>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="regionCollapse">
+                <div class="card card-bodyCo">
+                  <div class="countryContainer">
+                    <h2 class="coTitle">
+                      <a
+                        class="regionTree"
+                        data-toggle="collapse"
+                        href="#cityCollapse"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="multiCollapseExample1"
+                        >Colombia</a
                       >
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a valid state.
+                    </h2>
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-trash-alt"></i>
+                    <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCity">
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="col cityContainer">
+                    <div class="collapse multi-collapse" id="cityCollapse">
+                      <div class="card card-bodyCi">
+                        <h6>Medellín</h6>
+                        <i class="fa fa-pencil"></i>
+                        <i class="far fa-trash-alt"></i>
                       </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="validationCustom03">País</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="validationCustom03"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Please provide a valid city.
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="validationCustom03">Ciudad</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="validationCustom03"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Please provide a valid city.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label for="validationCustom05">Dirección</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="validationCustom05"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Please provide a valid zip.
+                      <div class="card card-bodyCi">
+                        <h6>Bogotá</h6>
+                        <i class="fa fa-pencil"></i>
+                        <i class="far fa-trash-alt"></i>
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <label for="customRange1">Interés</label>
-                    <input
-                      type="range"
-                      class="custom-range"
-                      id="customRange1"
-                    />
-                  </div>
-                  <label for="validationCustom04">Canal preferido</label>
-                  <select
-                    class="custom-select"
-                    id="validationCustom04"
-                    required
-                  >
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please select a valid state.
-                  </div>
-                </form>
-                <!--Aqui Termina el formulario de contacto-->
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Cerrar
-                </button>
-                <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!--tabla-->
-        <h3 class="mb-4">Regiones, países y ciudades</h3>
 
-      </div>
+      </section>
     </div>
 
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/popper.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/main.js"></script>
-</div>
+   
+
+  </div>
+  </div>
+
+  <script src="./JS/jquery.min.js"></script>
+  <script src="./JS/popper.js"></script>
+  <script src="./JS/bootstrap.min.js"></script>
+  <script src="./JS/main.js"></script>
+  </div>
