@@ -3,14 +3,25 @@ let usersContainer = document.getElementById("users_container");
 let notification = document.getElementById("warningUser");
 let confirmDelete = document.getElementById("confirmDelete");
 
-console.log(formAdd);
+let close = () => {
+  $("#newUser").modal("hide");
+};
 
+let clear = () => {
+  formAdd.forEach((input) => {
+    input.value = "";
+  });
+};
+
+let open = () => {
+  $("#newUser").modal("show");
+};
+ 
 const findUser = () => {
   fetch("http://localhost:8000/users/find").then((userList) => {
     userList.json().then((users) => {
-      console.log(users);
       users.forEach((element) => {
-        const { name, lastname, email, role, id } = element;
+        const { name, lastname, email, rol, id } = element;
         let renderUser = `
             <tr>
                 <td>
@@ -19,13 +30,15 @@ const findUser = () => {
                 <td class="name">${name}</td>
                 <td class="lastName">${lastname}</td>
                 <td class="email">${email}</td>
-                <td class="role">${role}</td>
+                <td class="rol">${rol}</td>
                 <td>
                 <button class="edititem">
-                  <i class="fa fa-pencil onclick="deleteUser(${id})""></i>
+                  <i class="fa fa-pencil" onclick="getUserInfo(${id})"></i>
+                </button>
+                <button class="edititem">
                   <i class="fa fa-trash deleteitem" onclick="deleteUser(${id})"></i>
                 </button>
-                </td>
+              </td>
           </tr>
         `;
         usersContainer.insertAdjacentHTML("beforeend", renderUser);
@@ -58,7 +71,6 @@ const validationAdd = () => {
   addUser(dataJSON);
 };
 
-
 const addUser = (Userdata) => {
   fetch("http://localhost:8000/users/signup", {
     method: "POST",
@@ -82,7 +94,7 @@ const addUser = (Userdata) => {
             <td class="role">${rol}</td>
             <td>
             <button class="edititem">
-              <i class="fa fa-pencil"></i>
+              <i class="fa fa-pencil" onclick="getUserInfo(${id})"></i>
               <i class="fa fa-trash deleteitem" onclick="deleteUser(${id})"></i>
             </button>
             </td>
@@ -96,7 +108,7 @@ const addUser = (Userdata) => {
 };
 
 let openDelete = () => {
-   $("#deleteConfirm").modal("show");
+  $("#deleteConfirm").modal("show");
 };
 
 const deleteUser = (id) => {
@@ -104,12 +116,12 @@ const deleteUser = (id) => {
     let jsonId = JSON.stringify(objectId); */
   openDelete();
   confirmDelete.addEventListener("click", () => {
-    fetch(`http://localhost:8000/users/delete/1${id}`, {
+    fetch(`http://localhost:8000/users/delete/${id}`, {
       method: "DELETE",
-      /* headers: {
+      headers: {
           "Content-Type": "application/json",
           //   Authorization: "Bearer " + token,
-        }, */
+        },
     }).then((user) => {
       console.log(user);
       location.reload();
@@ -117,12 +129,65 @@ const deleteUser = (id) => {
   });
 };
 
-let close = () => {
- $("#newUser").modal("hide");
- };
+//UPDATE USERS
+let getUserInfo = (id) => {
+  fetch(`http://localhost:8000/users/findUser/${id}`, {
+    method: "GET",
+    /* headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    }, */
+  }).then((user) => {
+    user.json().then((userData) => {
+      const { id, name, lastname, email, rol } = userData;
+      formAdd[0].value = name;
+      formAdd[1].value = lastname;
+      formAdd[2].value = email;
+      formAdd[3].value = rol;
+      open();
+      saveUser.onclick = "";
+      saveUser.addEventListener("click", () => {
+        let formData = Array.from(formAdd).reduce(
+          (acc, input) => ({
+            ...acc,
+            [input.id]: input.value,
+          }),
+          {}
+        );
+        for (const key in formData) {
+          if (formData[key] === "") {
+            delete formData[key];
+          }
+        }
+        let data2 = {
+          name: formData.inputUserName,
+          lastname: formData.inputUserLastName,
+          email: formData.inputEmail,
+          rol: formData.inputProfile,
+          password: formData.inputPassword,
+        };
 
-let clear = () => {
-   formAdd.forEach((input) => {
-    input.value = "";
-   });
+        updateUser(id, data2);
+        close();
+        clear();
+      });
+    });
+  });
+};
+
+let updateUser = (id, data) => {
+  console.log(data);
+  fetch(`http://localhost:8000/users/updateUser/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+      /* Authorization: "Bearer " + token, */
+    },
+  }).then((updatedUser) => {
+    updatedUser.json().then((userUpd) => {
+      location.reload();
+      console.log(userUpd);
+    });
+  });
 };

@@ -29,6 +29,9 @@
         <li>
           <a href="./country.html"><span class="fa fa-map sitenow"></span>Región/Ciudad</a>
         </li>
+        <li>
+          <a href="./login.html"><span class="fa fa-power-off"></span>Salir</a>
+        </li>
       </ul>
 
       <div class="footer"></div>
@@ -162,11 +165,18 @@
             <a class="regionTree" data-toggle="collapse" href="#regionCollapse" role="button" aria-expanded="false"
               aria-controls="multiCollapseExample1">Sudamerica</a>
           </h1>
-          <i class="fa fa-pencil"></i>
-          <i class="far fa-trash-alt" onclick="regionOpenDelete()"></i>
-          <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCountry">
-            <i class="fa fa-plus"></i>
-          </button>
+          <div id="accionRegion">
+            <button class="btn plus_accordion" id="" type="submit"  onclick="" data-toggle="modal" data-target="">
+              <i class="fa fa-pencil-square-o"></i>
+            </button>
+            <button class="btn plus_accordion" id="" type="submit"  onclick="regionOpenDelete()" data-toggle="modal" data-target="">
+              <i class="fa fa-trash-o"></i>
+            </button>
+            <i class="far fa-trash-alt"></i>
+            <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCountry">
+              <i class="fa fa-plus-square-o"></i>
+            </button>
+          </div>
           <div class="row">
             <div class="col">
               <div class="collapse multi-collapse" id="regionCollapse">
@@ -176,11 +186,18 @@
                       <a class="regionTree" data-toggle="collapse" href="#cityCollapse" role="button"
                         aria-expanded="false" aria-controls="multiCollapseExample1">Colombia</a>
                     </h2>
-                    <i class="fa fa-pencil"></i>
-                    <i class="fa fa-trash-alt"></i>
-                    <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCity">
-                      <i class="fa fa-plus"></i>
-                    </button>
+                    <div id="accionRegion">
+                      <button class="btn plus_accordion" id="" type="submit"  onclick="" data-toggle="modal" data-target="">
+                        <i class="fa fa-pencil-square-o"></i>
+                      </button>
+                      <button class="btn plus_accordion" id="" type="submit"  onclick="" data-toggle="modal" data-target="">
+                        <i class="fa fa-trash-o"></i>
+                      </button>
+                      <i class="far fa-trash-alt"></i>
+                      <button class="btn plus_accordion" id="" type="submit" data-toggle="modal" data-target="#addCity">
+                        <i class="fa fa-plus-square-o"></i>
+                      </button>
+                    </div>
                   </div>
                   <div class="col cityContainer">
                     <div class="collapse multi-collapse" id="cityCollapse">

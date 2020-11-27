@@ -29,212 +29,183 @@
         <li>
           <a href="./country.html"><span class="fa fa-map"></span>Región/Ciudad</a>
         </li>
+        <li>
+          <a href="./login.html"><span class="fa fa-power-off"></span>Salir</a>
+        </li>
       </ul>
 
       <div class="footer"></div>
     </nav>
 
 
-      <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Busca aquí"
-                aria-label="busqueda"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button
-                class="btn btn-primary"
-                id="adduser"
-                type="submit"
-                data-toggle="modal"
-                data-target="#newCompany"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-              <button class="btn btn-primary" type="submit" id="dowload">
-                <i class="fa fa-download"></i>
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Busca aquí" aria-label="busqueda"
+              aria-describedby="button-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="fa fa-search"></i>
               </button>
             </div>
           </div>
-        </nav>
-        <!-- Modal -->
-        <div class="modal fade" id="newCompany" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="ModalLabel">Nueva Compañia</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <form>
-                          <div class="form-row">
-                              <div class="form-group col-md-6">
-                                  <label for="CompanyName">Nombre</label>
-                                  <input type="text" class="form-control" id="CompanyName">
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="companyCountry">País</label>
-                                  <select id="companyCountry" class="form-control">
-                                      <option selected></option>
-                                      <option>Argentina</option>
-                                      <option>Colombia</option>
-                                  </select>
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="companyCity">Ciudad</label>
-                                  <select id="companyCity" class="form-control">
-                                      <option selected></option>
-                                      <option>Medellín</option>
-                                      <option>Buenos Aires</option>
-                                  </select>
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="companyAddress">Dirección</label>
-                                  <input type="text" class="form-control" id="companyAddress">
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="companyEmail">Email</label>
-                                  <input type="email" class="form-control" id="companyEmail">
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="companyPhone">Teléfono</label>
-                                  <input type="tel" class="form-control" id="companyPhone">
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Limpiar</button>
-                      <button type="button" class="btn btn-primary">Guardar Compañia</button>
-                  </div>
-              </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-primary" id="adduser" type="submit" data-toggle="modal" data-target="#newCompany">
+              <i class="fa fa-plus"></i>
+            </button>
+            <button class="btn btn-primary" type="submit" id="dowload" data-toggle="modal" data-target="#companydowload">
+              <i class="fa fa-download"></i>
+            </button>
           </div>
+        </div>
+      </nav>
+      <!-- Modal -->
+      <div class="modal fade" id="newCompany" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Nueva Compañia</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="CompanyName">Nombre</label>
+                    <input type="text" class="form-control" id="CompanyName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="companyCountry">País</label>
+                    <select id="companyCountry" class="form-control">
+                      <option selected></option>
+                      <option>Argentina</option>
+                      <option>Colombia</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="companyCity">Ciudad</label>
+                    <select id="companyCity" class="form-control">
+                      <option selected></option>
+                      <option>Medellín</option>
+                      <option>Buenos Aires</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="companyAddress">Dirección</label>
+                    <input type="text" class="form-control" id="companyAddress">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="companyEmail">Email</label>
+                    <input type="email" class="form-control" id="companyEmail">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="companyPhone">Teléfono</label>
+                    <input type="tel" class="form-control" id="companyPhone">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Limpiar</button>
+              <button type="button" class="btn btn-primary">Guardar Compañia</button>
+            </div>
+          </div>
+        </div>
       </div>
 
 
-        <!--tabla-->
-        <h3 class="mb-4">Compañías</h3>
-        <div class="content">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead class="text-primary">
-                          <th></th>
-                          <th>Nombre</th>
-                          <th>País</th>
-                          <th>Ciudad</th>
-                          <th>Dirección</th>
-                          <th>Email</th>
-                          <th>Telefono</th>
-                          <th></th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <input
-                                type="checkbox"
-                                name=""
-                                class="selectitem"
-                              />
-                            </td>
-                            <td>Apple</td>
-                            <td>EEUU</td>
-                            <td>California</td>
-                            <td>Street 25 # 4567</td>
-                            <td>Apple@icloud.com</td>
-                            <td >6138341</td>
-                            <td>
-                              <button class="edititem">
-                                <i class="fa fa-pencil"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <tr>
-                              <td>
-                                <input
-                                  type="checkbox"
-                                  name=""
-                                  class="selectitem"
-                                />
-                              </td>
-                              <td>Bancolombia</td>
-                              <td>Colombia</td>
-                              <td>Medellín</td>
-                              <td>Cr 25 # 4567</td>
-                              <td>hola@abancolombia.com</td>
-                              <td>136894</td>
-                              <td>
-                                <button class="edititem">
-                                  <i class="fa fa-pencil"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input
-                                  type="checkbox"
-                                  name=""
-                                  class="selectitem"
-                                />
-                              </td>
-                              <td>Acamica</td>
-                              <td>Argentina</td>
-                              <td>Buenos aires</td>
-                              <td>Cr 25 # 4567</td>
-                              <td>hola@acamica.com</td>
-                              <td>341698</td>
-                              <td>
-                                <button class="edititem">
-                                  <i class="fa fa-pencil"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input
-                                  type="checkbox"
-                                  name=""
-                                  class="selectitem"
-                                />
-                              </td>
-                              <td>IBM</td>
-                              <td>EEUU</td>
-                              <td>New yok</td>
-                              <td>street 25 # 4567</td>
-                              <td>hello@ibm.com</td>
-                              <td>313689</td>
-                              <td>
-                                <button class="edititem">
-                                  <i class="fa fa-pencil"></i>
-                                </button>
-                              </td>
-                            </tr>
-                        </tbody>
-                      </table>
-                    </div>
+      <!--tabla-->
+      <h3 class="mb-4">Compañías</h3>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <th></th>
+                        <th>Nombre</th>
+                        <th>País</th>
+                        <th>Ciudad</th>
+                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th></th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="" class="selectitem" />
+                          </td>
+                          <td>Apple</td>
+                          <td>EEUU</td>
+                          <td>California</td>
+                          <td>Street 25 # 4567</td>
+                          <td>Apple@icloud.com</td>
+                          <td>6138341</td>
+                          <td>
+                            <button class="edititem">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="" class="selectitem" />
+                          </td>
+                          <td>Bancolombia</td>
+                          <td>Colombia</td>
+                          <td>Medellín</td>
+                          <td>Cr 25 # 4567</td>
+                          <td>hola@abancolombia.com</td>
+                          <td>136894</td>
+                          <td>
+                            <button class="edititem">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="" class="selectitem" />
+                          </td>
+                          <td>Acamica</td>
+                          <td>Argentina</td>
+                          <td>Buenos aires</td>
+                          <td>Cr 25 # 4567</td>
+                          <td>hola@acamica.com</td>
+                          <td>341698</td>
+                          <td>
+                            <button class="edititem">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="" class="selectitem" />
+                          </td>
+                          <td>IBM</td>
+                          <td>EEUU</td>
+                          <td>New yok</td>
+                          <td>street 25 # 4567</td>
+                          <td>hello@ibm.com</td>
+                          <td>313689</td>
+                          <td>
+                            <button class="edititem">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -243,9 +214,27 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/popper.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/main.js"></script>
-</div>
+  <!-- Proximamente -->
+  <div class="modal fade" id="companydowload" data-toggle="modal" tabindex="-1" aria-labelledby="deleteConfirmLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img class="proximamente" src="./Assets/Images/proximamente.png" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Volver
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./JS/jquery.min.js"></script>
+  <script src="./JS/popper.js"></script>
+  <script src="./JS/bootstrap.min.js"></script>
+  <script src="./JS/main.js"></script>
+  </div>

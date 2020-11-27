@@ -29,6 +29,7 @@ router.get("/findUser/:id", (req, res) => {
 });
 
 router.put("/updateUser/:id", (req, res) => {
+  console.log(req.body);
   updateUser(req, res);
 });
 

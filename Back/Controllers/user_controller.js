@@ -67,6 +67,8 @@ const updateUser = (req, res) => {
   let id = req.params.id;
   let data = req.body;
 
+  console.log(data);
+
   User.update(data, { where: { id: id } })
     .then((response) => {
       if (response[0] === 1)

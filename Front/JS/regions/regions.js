@@ -14,7 +14,7 @@ let close = () => {
   $("#addRegion").modal("hide");
 };
 
-let renderRegions = () => {
+/* let renderRegions = () => {
   fetch("http://localhost:3000/region/list", {
     method: "GET",
     headers: {
@@ -50,7 +50,7 @@ let renderRegions = () => {
     });
   });
 };
-renderRegions();
+renderRegions(); */
 
 let validationRegion = () => {
   let regionData = regionName.value;
@@ -73,13 +73,13 @@ let addRegion = (data) => {
   fetch("http://localhost:8000/region/createRegion", {
     method: "POST",
     body: data,
-    headers: {
+    /* headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token,
-    },
+    }, */
   }).then((res) => {
     if (res.status === 400) {
-      regionMessage.innerHTML = "*Ya existe una región con este nombre";
+      regionMessage.innerHTML = "Ya hay una región con este nombre";
     } else {
       res.json().then((info) => {
         console.log(info);

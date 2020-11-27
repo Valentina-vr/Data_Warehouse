@@ -10800,7 +10800,7 @@ h5,
   font-size: 11px;
 }
 #sidebar.active ul.components li a {
-  padding: 40px 0;
+  padding: 60px 0 0;
 }
 #sidebar.active ul.components li a span {
   margin-right: 0;
@@ -11060,7 +11060,7 @@ input[type="checkbox"]:checked + label {
 }
 
 .plus_accordion:hover {
-  color: rgb(0, 213, 53);
+  color: #5d42de;
   font-size: 20px;
 }
 
@@ -11080,4 +11080,18 @@ input[type="checkbox"]:checked + label {
 
 .sitenow{
   color:#5d42de;
+  border-left: 5px solid #5d42de;
+  border-radius: 3px;;
+}
+
+
+#accionRegion{
+  display: inline;
+  justify-content: end;
+}
+
+
+.proximamente {
+  background-size: cover;
+  width: 100%;
 }

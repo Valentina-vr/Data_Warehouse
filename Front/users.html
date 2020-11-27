@@ -29,6 +29,9 @@
         <li>
           <a href="./country.html"><span class="fa fa-map"></span>Región/Ciudad</a>
         </li>
+        <li>
+          <a href="./login.html"><span class="fa fa-power-off"></span>Salir</a>
+        </li>
       </ul>
 
       <div class="footer"></div>
@@ -50,7 +53,7 @@
             <button class="btn btn-primary" id="adduser" type="submit" data-toggle="modal" data-target="#newUser">
               <i class="fa fa-plus"></i>
             </button>
-            <button class="btn btn-primary" type="submit" id="dowload">
+            <button class="btn btn-primary" type="submit" id="dowload" data-toggle="modal" data-target="#usersdowload">
               <i class="fa fa-download"></i>
             </button>
           </div>
@@ -62,7 +65,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">Ususario</h5>
+              <h5 class="modal-title" id="ModalLabel">Usuario</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -148,32 +151,50 @@
   </div>
 
   <!-- Confirmación de eliminado -->
-  <div class="modal fade" id="deleteConfirm" data-toggle="modal" tabindex="-1"
-  aria-labelledby="deleteConfirmLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal fade" id="deleteConfirm" data-toggle="modal" tabindex="-1" aria-labelledby="deleteConfirmLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="deleteConfirmLabel">
-                  ¿Estás seguro que deseas eliminar el registro?
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="confirmDelete" data-dismiss="modal">
-                  Si
-              </button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">
-                  No
-              </button>
-          </div>
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmLabel">
+            ¿Estás seguro que deseas eliminar el registro?
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="confirmDelete" data-dismiss="modal">
+            Si
+          </button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            No
+          </button>
+        </div>
       </div>
+    </div>
   </div>
-</div>
+
+  <!-- Proximamente -->
+  <div class="modal fade" id="usersdowload" data-toggle="modal" tabindex="-1" aria-labelledby="deleteConfirmLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img class="proximamente" src="./Assets/Images/proximamente.png" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Volver
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./JS/jquery.min.js"></script>
   <script src="./JS/bootstrap.min.js"></script>
   <script src="./JS/main.js"></script>
   <script src="./JS/users/users.js"></script>
   </div>
+</body>
