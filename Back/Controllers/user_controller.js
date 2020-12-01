@@ -3,42 +3,75 @@ const User = require("../Database/Models/users_model");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
-encryptPassword = async (password) => {
+/* encryptPassword = async (password) => {
   const salt = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salt);
 };
 
 comparePassword = async (password, receivedPassword) => {
   return await bcrypt.compare(password, receivedPassword);
-};
+}; */
 
 //SIGNUP USERS
-const signUp = async (req, res) => {
-  const { name, lastname, email, password, rol } = req.body;
-  const newUser = new User({
-    name,
-    lastname,
-    email,
-    password: await encryptPassword(password),
-    rol,
+const signUp = async (data) => {
+  return new Promise(async (res, rejc) => {
+    if (
+      !data.name ||
+      !data.lastname ||
+      !data.email ||
+      !data.password ||
+      !data.rol
+    ) {
+      rejc({ status: 406, message: "Please fill all fields" });
+    } else {
+      bcrypt.hash(data.password, 10, (err, hash) => {
+        if (err) {
+          rejc({
+            status: 500,
+            message:
+              "Sorry, the server has presented an error. Try again later",
+          });
+        } else {
+          data.password = hash;
+          User.create(data)
+            .then((user) => {
+              res(user);
+            })
+            .catch((err) => {
+              rejc({
+                status: 500,
+                message:
+                  "Sorry, the server has presented an error. Try again later",
+              });
+            });
+        }
+      });
+    }
   });
-  const savedUser = await newUser.save();
-  res.status(200).json(savedUser);
 };
 
 //LOGIN USUARIOS
-const login = (req, res) => {
-  const userFound = User.findOne({ where: { email: req.body.email } });
-  if (!userFound) return res.status(400).json({ message: "User not found" });
-
-  const matchPassword = comparePassword(req.body.password, userFound.password);
-  if (!matchPassword)
-    return res.status(401).json({ token: null, message: "Invalid password" });
-
-  const token = jwt.sign({ id: userFound.id }, process.env.SECRET, {
-    expiresIn: 86400, // 24 hours
+const login = (email, password) => {
+  return new Promise(async (res, rejc) => {
+    if (!email || !password) {
+      rejc({ status: 406, message: "Please fill all fields" });
+    } else {
+      let user = await User.findOne({ where: { email: email } });
+      let comparePassword = await bcrypt.compare(password, user.password);
+      console.log(user);
+      console.log(comparePassword);
+      if (user && comparePassword) {
+        delete user.password;
+        res(
+          jwt.sign(user, process.env.SECRET, {
+            expiresIn: "1h",
+          })
+        );
+      } else {
+        rejc({ status: 401, message: `Invalid password o user` });
+      }
+    }
   });
-  res.status(200).json({ token });
 };
 
 //FIND ALL USERS

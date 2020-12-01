@@ -1,3 +1,15 @@
+let data = parseJwt(window.localStorage.getItem("token"));
+let token = JSON.parse(window.localStorage.getItem("token"));
+let users = document.getElementById("usersTab");
+
+if (!data) {
+  window.location = "login.html";
+} else {
+  if (data.rol !== "Administrador") {
+    users.style.display = "none";
+  }
+}
+
 let formAdd = document.querySelectorAll("#userForm input,select");
 let usersContainer = document.getElementById("users_container");
 let notification = document.getElementById("warningUser");
@@ -77,7 +89,7 @@ const addUser = (Userdata) => {
     body: Userdata,
     headers: {
       "Content-Type": "application/json",
-      //TODO:   Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((user) => {
     user.json().then((users) => {
@@ -120,7 +132,7 @@ const deleteUser = (id) => {
       method: "DELETE",
       headers: {
           "Content-Type": "application/json",
-          //   Authorization: "Bearer " + token,
+          Authorization: "Bearer " + token,
         },
     }).then((user) => {
       console.log(user);
@@ -133,10 +145,10 @@ const deleteUser = (id) => {
 let getUserInfo = (id) => {
   fetch(`http://localhost:8000/users/findUser/${id}`, {
     method: "GET",
-    /* headers: {
+    headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token,
-    }, */
+    },
   }).then((user) => {
     user.json().then((userData) => {
       const { id, name, lastname, email, rol } = userData;
@@ -182,7 +194,7 @@ let updateUser = (id, data) => {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
-      /* Authorization: "Bearer " + token, */
+      Authorization: "Bearer " + token,
     },
   }).then((updatedUser) => {
     updatedUser.json().then((userUpd) => {

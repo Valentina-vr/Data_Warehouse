@@ -1,3 +1,15 @@
+let data = parseJwt(window.localStorage.getItem("token"));
+let token = JSON.parse(window.localStorage.getItem("token"));
+let users = document.getElementById("usersTab");
+
+if (!data) {
+  window.location = "login.html";
+} else {
+  if (data.rol !== "Administrador") {
+    users.style.display = "none";
+  }
+}
+
 //DOM ELEMENTS
 let form = document.querySelectorAll("#companyForm input,select");
 let lackFields = document.querySelector("#lackFields");
@@ -9,18 +21,27 @@ let ModalLabel = document.getElementById("ModalLabel");
 let companyCountry = document.getElementById("companyCountry");
 let companyCity = document.getElementById("companyCity");
 
+
+
+
 //CLOSE MODAL
 let close = () => {
-    $("#addCompany").modal("hide");
+    $("#newCompany").modal("hide");
 };
   
 //OPEN MODALS
 let open = () => {
-    $("#addCompany").modal("show");
+    $("#newCompany").modal("show");
 };
   
 let openDelete = () => {
     $("#deleteCompanyConfirm").modal("show");
+};
+
+let clear = () => {
+  form.forEach((input) => {
+    input.value = "";
+  });
 };
 
 //RENDER COMPANIES
@@ -29,7 +50,7 @@ let renderCompanies = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((companyCard) => {
       companyCard.json().then((companyCard) => {
@@ -48,10 +69,10 @@ let renderCompanies = () => {
             <td class="address">${phone}</td>
             <td>
                 <button class="edititem">
-                    <i class="fa fa-pencil" onclick=""></i>
+                    <i class="fa fa-pencil" onclick="getCompanyInfo(${id})"></i>
                 </button>
                 <button class="edititem">
-                    <i class="fa fa-trash deleteitem" onclick=""></i>
+                    <i class="fa fa-trash deleteitem" onclick="deleteCompany(${id})"></i>
                 </button>
             </td>
          </tr>
@@ -64,16 +85,95 @@ let renderCompanies = () => {
 
 renderCompanies();
 
+//ADD COMPANY
+
+let getCompanyData = () => {
+  let formData = Array.from(form).reduce(
+    (acc, input) => ({
+      ...acc,
+      [input.id]: input.value,
+    }),
+    {}
+  );
+
+
+  for (const key in formData) {
+    if (formData[key] === "") {
+      lackFields.innerHTML = "*Por favor llene todos los campos";
+      return;
+    }
+  }
+
+  let data2 = {
+    name: formData.CompanyName,
+    country: formData.companyCountry,
+    city: formData.companyCity,
+    address: formData.companyAddress,
+    email: formData.companyEmail,
+    phone: formData.companyPhone,
+  };
+
+  let data = JSON.stringify(data2);
+  addCompany(data);
+};
+
+let addCompany = (data) => {
+  event.preventDefault;
+  fetch("http://localhost:8000/company/create", {
+    method: "POST",
+    body: data,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  }).then((res) => {
+    if (res.status === 400) {
+      emailExist.innerHTML =
+        "El email ya se encuentra registrado en otra compañia";
+    } else if (res.status === 500) {
+      lackFields.innerHTML =
+        "Tenemos problemas en el servidor, por favor intente mas tarde";
+    } else {
+      res.json().then((info) => {
+        const { id, name, country, city, address, email, phone } = info;
+        let company = `
+        <tr>
+            <td>
+                <input type="checkbox" name="" class="selectitem"/>
+            </td>
+            <td class="name">${name}</td>
+            <td class="country">${country}</td>
+            <td class="city">${city}</td>
+            <td class="address">${address}</td>
+            <td class="address">${email}</td>
+            <td class="address">${phone}</td>
+            <td>
+                <button class="edititem">
+                    <i class="fa fa-pencil" onclick="getCompanyInfo(${id})"></i>
+                </button>
+                <button class="edititem">
+                    <i class="fa fa-trash deleteitem" onclick="deleteCompany(${id})"></i>
+                </button>
+            </td>
+         </tr>
+        `;
+        companyList.insertAdjacentHTML("beforeend", company);
+        close();
+        clear();
+      });
+    }
+  });
+};
+
 let renderCountries = () => {
     fetch(`http://localhost:8000/country/find`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((allCountries) => {
       allCountries.json().then((countries) => {
-        console.log(countries);
         countries.forEach((country) => {
           const { id, name } = country;
           let countrySelect = `<option data-id="${id}">${name}</option>`;
@@ -107,7 +207,7 @@ let renderCities = (countryId) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((cityCard) => {
       cityCard.json().then((cityCard) => {
@@ -122,4 +222,90 @@ let renderCities = (countryId) => {
 
 renderCountries();
 
-//
+
+//DELETE COMPANY
+
+let deleteCompany = (id) => {
+  openDelete();
+  modalYes.addEventListener("click", () => {
+    fetch(`http://localhost:8000/company/deleteCompany/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    }).then((company) => {
+      location.reload();
+    });
+  });
+};
+
+
+//UPDATE COMPANY
+let getCompanyInfo = (id) => {
+  fetch(`http://localhost:8000/company/findCompany/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  }).then((company) => {
+    company.json().then((companyData) => {
+      const { id, name, country, city, address, email, phone } = companyData;
+      ModalLabel.innerHTML = "Editar compañia";
+      form[0].value = name;
+      form[1].value = country;
+      form[2].value = city;
+      form[3].value = address;
+      form[4].value = email;
+      form[5].value = phone;
+      open();
+      saveCompany.onclick = "";
+      saveCompany.addEventListener("click", () => {
+        let formData = Array.from(form).reduce(
+          (acc, input) => ({
+            ...acc,
+            [input.id]: input.value,
+          }),
+          {}
+        );
+        for (const key in formData) {
+          if (formData[key] === "") {
+            delete formData[key];
+          }
+        }
+        let data2 = {
+          name: formData.CompanyName,
+          country: formData.companyCountry,
+          city: formData.companyCity,
+          address: formData.companyAddress,
+          email: formData.companyEmail,
+          phone: formData.companyPhone,
+        };
+
+        let data = JSON.stringify(data2);
+        updateCompany(id, data);
+        close();
+        clear();
+      });
+    });
+  });
+};
+
+let updateCompany = (id, data) => {
+  fetch(`http://localhost:8000/company/updatecompany/${id}`, {
+    method: "PUT",
+    body: data,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  }).then((updatedCompany) => {
+    updatedCompany.json().then((companyUpd) => {
+      location.reload();
+    });
+  });
+};
+
+
+

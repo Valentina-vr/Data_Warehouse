@@ -1,3 +1,15 @@
+let data = parseJwt(window.localStorage.getItem("token"));
+let token = JSON.parse(window.localStorage.getItem("token"));
+let users = document.getElementById("usersTab");
+
+if (!data) {
+  window.location = "login.html";
+} else {
+  if (data.rol !== "Administrador") {
+    users.style.display = "none";
+  }
+}
+
 //REGION
 let regionContainer = document.getElementById("regionsContainer");
 let regionName = document.getElementById("regionName");
@@ -54,7 +66,7 @@ let renderRegions = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      /* Authorization: "Bearer " + token, */
+      Authorization: "Bearer " + token,
     },
   }).then((regionCard) => {
     regionCard.json().then((regionCard) => {
@@ -118,7 +130,7 @@ let addRegion = (data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      /* Authorization: "Bearer " + token, */
+      Authorization: "Bearer " + token,
     },
   }).then((res) => {
     if (res.status === 400) {
@@ -167,7 +179,7 @@ let getRegionInfo = (id, name) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((region) => {
     region.json().then((regionInfo) => {
@@ -194,7 +206,7 @@ let updateRegion = (id, data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((updatedRegion) => {
     updatedRegion.json().then((regionUpd) => {
@@ -215,7 +227,7 @@ let deleteRegion = (id) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((response) => {
       location.reload();
@@ -229,7 +241,7 @@ let renderCountries = (regionId) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((countryCard) => {
     countryCard.json().then((country) => {
@@ -294,7 +306,7 @@ let addCountry = (data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((res) => {
     if (res.status === 400) {
@@ -342,7 +354,7 @@ let getCountryInfo = (id, name) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((country) => {
     country.json().then((countryInfo) => {
@@ -368,7 +380,7 @@ let updateCountry = (id, data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((updatedCountry) => {
     updatedCountry.json().then((countryUpd) => {
@@ -389,7 +401,7 @@ let deleteCountry = (id) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((response) => {
       location.reload();
@@ -403,7 +415,7 @@ let renderCities = (countryId) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((cityCard) => {
     cityCard.json().then((cityCard) => {
@@ -458,7 +470,7 @@ let addCity = (data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((res) => {
     if (res.status === 400) {
@@ -495,7 +507,7 @@ let getCityInfo = (id, name) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((city) => {
     city.json().then((cityInfo) => {
@@ -520,7 +532,7 @@ let updateCity = (id, data) => {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      //Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   }).then((updatedCity) => {
     updatedCity.json().then((updatedCity) => {
@@ -541,7 +553,7 @@ let deleteCity = (id) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     }).then((response) => {
       location.reload();

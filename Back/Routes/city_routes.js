@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const authorization = require("../Middlewares/authorization");
+const authentication = require("../Middlewares/authentication");
+const CheckDuplicateEmail = require("../Middlewares/verify");
+
 const {
   createCity,
   find,

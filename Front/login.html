@@ -11,14 +11,15 @@
     <main id="autenticacion">
         <div class="login">
             <img src="./Assets/Images/logo.png" alt="Logotipo advantage">
-            <form action="" id="form_login">
-                <label class="login-field-icon fui-user" for="login-name">Usuario</label>
-                <input type="text" class="login-field" value="" placeholder="tunombre@gmail.com" id="login-name">
+            <form id="loginForm">
+                <label class="login-field-icon fui-user" for="login_name">Usuario</label>
+                <input type="text" class="login-field input" value="" placeholder="tunombre@gmail.com" id="login_name">
 
-                <label class="login-field-icon fui-lock" for="login-pass">Contraseña</label>
-                <input type="password" class="login-field" value="" placeholder="****" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login_pass">Contraseña</label>
+                <input type="password" class="login-field input" value="" placeholder="" id="login_pass">
 
-                <button class="btn" onclick="login()"  href="">INICIAR SESIÓN</button>
+                <input type="button" value="INICIAR SESIÓN" class="btn"  onclick="login()">
+               <!--  <button class="btn" id="" onclick="login()" >INICIAR SESIÓN</button> -->
                 
                 <div class="signup">
                     <p id="warninglogin" class="lackFields"></p><br>

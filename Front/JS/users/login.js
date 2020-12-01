@@ -1,7 +1,7 @@
+let loginForm = document.querySelectorAll("#loginForm input");
+let lackFields = document.getElementById("warninglogin");
 
-let loginForm = document.querySelectorAll("#form_login input");
-let warninglogin = document.getElementById("warninglogin");
-
+//LOGIN USUARIOS
 let login = () => {
   let login = Array.from(loginForm).reduce(
     (acc, input) => ({
@@ -14,13 +14,13 @@ let login = () => {
 
   for (const key in login) {
     if (login[key] === "") {
-      warninglogin.innerHTML = "Es necesario llenar todos los campos";
+      lackFields.innerHTML = "Por favor llene todos los campos";
       return;
     }
   }
   let data2 = {
-    email: login.InputEmail,
-    password: login.exampleInputPassword1,
+    email: login.login_name,
+    password: login.login_pass,
   };
 
   let data = JSON.stringify(data2);
@@ -33,13 +33,13 @@ let login = () => {
     },
   }).then((res) => {
     if (res.status === 401) {
-      warninglogin.innerHTML = "Usuario o contaseña no validos";
+      lackFields.innerHTML = "Usuario o contaseña no validos";
     } else {
       res.json().then((token) => {
         let data = JSON.stringify(token);
         console.log(token);
-        window.localStorage.setItem("token", data);
-        window.location.href = "/contacts.html";
+         window.localStorage.setItem("token", data);
+        window.location.href = "contacts.html"; 
       });
     }
   });

@@ -72,7 +72,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="companyForm">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="CompanyName">Nombre</label>
@@ -107,11 +107,55 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Limpiar</button>
-              <button type="button" class="btn btn-primary">Guardar Compañia</button>
+              <button type="button" id="saveCompany" onclick="getCompanyData()" class="btn btn-primary">Guardar Compañia</button>
             </div>
           </div>
         </div>
       </div>
+      
+      <div
+      class="modal fade"
+      id="deleteCompanyConfirm"
+      data-toggle="modal"
+      tabindex="-1"
+      aria-labelledby="deleteConfirmLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteConfirmLabel">
+              ¿Está seguro que desea eliminar la compañia?
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmDelete"
+              data-dismiss="modal"
+            >
+              SI
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+            >
+              NO
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
       <!--tabla-->
@@ -166,7 +210,8 @@
   </div>
 
   <script src="./JS/jquery.min.js"></script>
-  <script src="./JS/bootstrap.min.js"></script>
   <script src="./JS/main.js"></script>
+  <script src="./JS/token.js"></script>
   <script src="./JS/Company/company.js"></script>
+
   </div>

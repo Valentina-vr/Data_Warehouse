@@ -10,19 +10,23 @@ const {
   findRegionCountry,
 } = require("../Controllers/country_controller");
 
-router.post("/create", (req, res) => {
+const authorization = require("../Middlewares/authorization");
+const authentication = require("../Middlewares/authentication");
+const CheckDuplicateEmail = require("../Middlewares/verify");
+
+router.post("/create", authentication, (req, res) => {
   createCountry(req, res);
 });
 
-router.get("/find", (req, res) => {
+router.get("/find", authentication, (req, res) => {
   find(req, res);
 });
 
-router.get("/findCountry/:id", (req, res) => {
+router.get("/findCountry/:id", authentication, (req, res) => {
   findCountry(req, res);
 });
 
-router.get("/find/region/:regionId", (req, res) => {
+router.get("/find/region/:regionId", authentication, (req, res) => {
   let { regionId } = req.params;
     findRegionCountry(regionId)
       .then((Country) => {
@@ -33,11 +37,11 @@ router.get("/find/region/:regionId", (req, res) => {
       });
 });
 
-router.put("/updateCountry/:id", (req, res) => {
+router.put("/updateCountry/:id", authentication, (req, res) => {
   updateCountry(req, res);
 });
 
-router.delete("/deleteCountry/:id", (req, res) => {
+router.delete("/deleteCountry/:id",authentication, (req, res) => {
   deleteCountry(req, res);
 });
 
