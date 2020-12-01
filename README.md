@@ -55,7 +55,7 @@ vas a acceder con el usuario administrador predeterminado para ejecutar sus resp
 
 ```Bash
 Email : admin@advantage.com
-Contraseña : admin
+Contraseña : 1234
 ```
 ---
 
