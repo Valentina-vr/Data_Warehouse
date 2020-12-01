@@ -1,9 +1,9 @@
 const Country = require("../Database/Models/country_model");
 
 const createCountry = async (req, res) => {
-  const { name } = req.body;
+  const { name, regionId } = req.body;
   const newCountry = new Country({
-    name,
+    name, regionId,
   });
   const savedCountry = await newCountry.save();
   res.status(200).json(savedCountry);
@@ -46,6 +46,22 @@ const updateCountry = (req, res) => {
     });
 };
 
+
+const findRegionCountry = (regionId) => {
+  return new Promise((res, rejc) => {
+    Country.findAll({ where: { regionId: regionId } })
+      .then((response) => {
+        res(response);
+      })
+      .catch(() => {
+        rejc({
+          status: 500,
+          message: "Sorry, the server has presented an error. Try again later",
+        });
+      });
+  });
+}
+
 const deleteCountry = (req, res) => {
   let id = req.params.id;
   Country.destroy({ where: { id: id } })
@@ -61,10 +77,13 @@ const deleteCountry = (req, res) => {
     });
 };
 
+
+
 module.exports = {
   createCountry,
   find,
   findCountry,
   updateCountry,
   deleteCountry,
+  findRegionCountry,
 };

@@ -7,6 +7,7 @@ const {
   findCountry,
   updateCountry,
   deleteCountry,
+  findRegionCountry,
 } = require("../Controllers/country_controller");
 
 router.post("/create", (req, res) => {
@@ -21,7 +22,17 @@ router.get("/findCountry/:id", (req, res) => {
   findCountry(req, res);
 });
 
-//TODO: ME FALTA VERIFICAR ESTE, ME ESTA GENERANDO ERROR
+router.get("/find/region/:regionId", (req, res) => {
+  let { regionId } = req.params;
+    findRegionCountry(regionId)
+      .then((Country) => {
+        res.status(200).json(Country);
+      })
+      .catch((err) => {
+        res.status(500).json("Error interno, por favor intente mas tarde");
+      });
+});
+
 router.put("/updateCountry/:id", (req, res) => {
   updateCountry(req, res);
 });

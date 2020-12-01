@@ -57,9 +57,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">
-                Región
-              </h5>
+              <h5 class="modal-title" id="ModalLabelRegion">Región</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -70,7 +68,7 @@
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="regionName">Nombre de la región</label>
-                    <input type="text" class="form-control" id="regionName" value=""/>
+                    <input type="text" class="form-control" id="regionName" value="" />
                     <p id="regionMessage" class="regionMessage"></p>
                   </div>
                 </div>
@@ -78,89 +76,187 @@
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary"  onclick="validationRegion()" id="addRegionBtn">Guardar región</button>
+              <button type="button" class="btn btn-primary" onclick="validationRegion()" id="addRegionBtn">Guardar
+                región</button>
             </div>
 
           </div>
         </div>
       </div>
-      <!-- MODAL PAISES -->
-      <div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">
-                País
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <div class="modalDeleteRegion">
+        <div class="modal fade" id="regionDeleteConfirm" data-toggle="modal" tabindex="-1"
+          aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmLabel">
+                  Esta acción también eliminará todos los paises dentro de esta región, ¿está seguro que desea
+                  continuar?
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmDelete" data-dismiss="modal">
+                  SI
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                  NO
+                </button>
+              </div>
             </div>
-            <div class="modal-body">
-              <img src="" alt="" />
-              <form class="needs-validation" novalidate>
-                <div class="form-row">
-                  <div class="col-md-6 mb-3">
-                    <label for="validationCustom01">Nombre del país</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="" required />
-                    <div class="valid-feedback">Looks good!</div>
+          </div>
+        </div>
+        <!-- MODAL PAISES -->
+        <div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabelCountry">
+                  País
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="" alt="" />
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="countryName">Nombre del país</label>
+                      <input type="text" class="form-control" id="countryName" value="" required />
+                      <div class="valid-feedback" id="countryMessage"></div>
+                    </div>
                   </div>
-                </div>
-            </div>
-            </form>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
+              </div>
+              </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnAddCountry">Guardar país</button>
+              </div>
 
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- MODAL CIUDADES -->
-      <div class="modal fade" id="addCity" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">
-                Ciudad
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <img src="" alt="" />
-              <form class="needs-validation" novalidate>
-                <div class="form-row">
-                  <div class="col-md-6 mb-3">
-                    <label for="validationCustom01">Nombre de la ciudad</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="" required />
-                    <div class="valid-feedback">Looks good!</div>
+        <!-- MODAL CIUDADES -->
+        <div class="modal fade" id="addCity" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCity"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">
+                  Ciudad
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="" alt="" />
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="cityName">Nombre de la ciudad</label>
+                      <input type="text" id="cityName" class="form-control" id="validationCustom01" value="" required />
+                      <div id="cityMessage"></div>
+                    </div>
                   </div>
-                </div>
-            </div>
-            </form>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
+              </div>
+              </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="addCityBtn" class="btn btn-primary">Guardar ciudad</button>
+              </div>
 
+            </div>
           </div>
         </div>
-      </div>
 
-      <!--CONTENIDO-->
-      <div>
-        <h3 class="mb-4">Regiones, países y ciudades</h3>
-        <button class="btn btnaddRegion" id="" type="submit" data-toggle="modal" data-target="#addRegion">
-          <i class="fa fa-plus"></i> Nueva región
-        </button>
-      </div>
+        <!-- MODAL DELETE COUNTRY -->
+        <div class="modal fade" id="ConfirmCountryDelete" data-toggle="modal" tabindex="-1"
+          aria-labelledby="countryDeleteConfirmLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="countryDeleteConfirmLabel">
+                  Esta acción también eliminará todas las ciudades dentro de este país, ¿desea continuar?
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmDeleteCountry" data-dismiss="modal">
+                  SI
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                  NO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <section class="region" id="regionsContainer">
-        <div id="regionCard">
+        <!-- MODAL DELETE CITY -->
+        <div class="modalDeleteCity">
+          
+          <div
+          class="modal fade"
+          id="cityDeleteConfirm"
+          data-toggle="modal"
+          tabindex="-1"
+          aria-labelledby="cityDeleteConfirmLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cityDeleteConfirmLabel">
+                  ¿Está seguro que desea eliminar esta ciudad?
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="addCitybtn btn-primary"
+                  id="confirmDeleteCity"
+                  data-dismiss="modal"
+                >
+                  SI
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-dismiss="modal"
+                >
+                  NO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--CONTENIDO-->
+        <div>
+          <h3 class="mb-4">Regiones, países y ciudades</h3>
+          <button class="btn btnaddRegion" id="" type="submit" data-toggle="modal" data-target="#addRegion">
+            <i class="fa fa-plus"></i> Nueva región
+          </button>
+        </div>
+
+        <section class="region" id="regionsContainer">
+          <!--         <div id="regionCard">
           <h1 class="regionTittle">
             <a class="regionTree" data-toggle="collapse" href="#regionCollapse" role="button" aria-expanded="false"
               aria-controls="multiCollapseExample1">Sudamerica</a>
@@ -217,14 +313,15 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </div> -->
+        </section>
+      </div>
     </div>
   </div>
-  </div>
-  <script src="./JS/regions/regions.js"></script>
+
   <script src="./JS/jquery.min.js"></script>
   <script src="./JS/bootstrap.min.js"></script>
   <script src="./JS/main.js"></script>
-
+  <script src="./JS/regions/regions.js"></script>
   </div>
+</body>

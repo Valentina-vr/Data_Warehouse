@@ -21,6 +21,21 @@ const find = (req, res) => {
     });
 };
 
+const findCityCountry = (countryId) => {
+  return new Promise((res, rejc) => {
+    City.findAll({ where: { countryId: countryId } })
+      .then((response) => {
+        res(response);
+      })
+      .catch(() => {
+        rejc({
+          status: 500,
+          message: "Sorry, the server has presented an error. Try again later",
+        });
+      });
+  });
+}
+
 const findCityById = (req, res) => {
   let id = req.params.id;
   City.findOne({ where: { id: id } }).then((city) => {
@@ -67,4 +82,5 @@ module.exports = {
   findCityById,
   updateCityById,
   deleteCityById,
+  findCityCountry,
 };

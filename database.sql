@@ -98,10 +98,10 @@ VALUES
     ('4','Paris','2'),
     ('5','Toulouse','2'),
     ('6','Montpellier','2'),
-    ('7','Berlín','3'),
+    ('7','Berlin','3'),
     ('8','Hamburgo','3'),
     ('9','Munich','3'),
-    ('10','Amsterdam','4')
+    ('10','Tokio','4')
 ;
 
 INSERT INTO `data_warehouse`.`user`
@@ -116,15 +116,15 @@ VALUES
 INSERT INTO `data_warehouse`.`company`
     (`id`,`name`,`country`,`city`,`address`,`email`,`phone`,`createdAt`,`updatedAt`)
 VALUES
-    ('1','Bancolombia','1','1','Carrera 48 #26-85','bancolombia@bancolombia.com','5109000','2020-11-27 00:50:50','2020-11-27 00:50:50'),
-    ('2','Louis Vuitton','2','2','Carrera 49 #63-95','louis@vuitton.com','5108956','2020-11-27 00:50:50','2020-11-27 00:50:50'),
-    ('3','Volkswagen','3','3','Carrera 89 #56-89','volkswagen@volkswagen.com','5103265','2020-11-27 00:50:50','2020-11-27 00:50:50'),
-    ('4','Nintendo','4','4','Carrera 96 #14-36','nintendo@nintendo.com','5107898','2020-11-27 00:50:50','2020-11-27 00:50:50')
+    ('1','Bancolombia','Colombia','Medellin','Carrera 48 #26-85','bancolombia@bancolombia.com','5109000','2020-11-27 00:50:50','2020-11-27 00:50:50'),
+    ('2','Louis Vuitton','France','Paris','Carrera 49 #63-95','louis@vuitton.com','5108956','2020-11-27 00:50:50','2020-11-27 00:50:50'),
+    ('3','Volkswagen','Germany','Munich','Carrera 89 #56-89','volkswagen@volkswagen.com','5103265','2020-11-27 00:50:50','2020-11-27 00:50:50'),
+    ('4','Nintendo','France','Toulouse','Carrera 96 #14-36','nintendo@nintendo.com','5107898','2020-11-27 00:50:50','2020-11-27 00:50:50')
 ;
 
 INSERT INTO `data_warehouse`.`contacts`
     (`id`,`name`,`lastname`,`role`,`email`,`company`,`region`,`country`,`city`,`address`,`interest`,`createdAt`,`updatedAt`)
 VALUES
-    ('1','Freddie','Mercury','Singer','freddie@gmail.com','3','1','1','1','Street 25 # 4567','25','2020-11-27 00:50:50','2020-11-27 00:50:50'),
-    ('2','Shuntaro','Furukawa','CEO','Furukawa@gmail.com','4','4','4','4','Street 98 # 4897','25','2020-11-27 00:50:50','2020-11-27 00:50:50')
+    ('1','Freddie','Mercury','Singer','freddie@gmail.com','Individual','Europa central','Germany','Hamburgo','Street 25 # 4567','25','2020-11-27 00:50:50','2020-11-27 00:50:50'),
+    ('2','Shuntaro','Furukawa','CEO','Furukawa@gmail.com','Nintendo','Nordeste de Asia','Japan','Tokio','Street 98 # 4897','25','2020-11-27 00:50:50','2020-11-27 00:50:50')
 ;
